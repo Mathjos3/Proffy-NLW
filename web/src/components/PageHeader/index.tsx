@@ -4,8 +4,9 @@ import backIcon from '../../assets/images/icons/back.svg';
 import logoImg from '../../assets/images/logo.svg';
 import './styles.css';
 
-interface pageHeaderProps{
+interface pageHeaderProps {
     title: string;
+    description?: string;
 }
 
 const PageHeader: React.FC<pageHeaderProps> = (props) => {
@@ -20,10 +21,11 @@ const PageHeader: React.FC<pageHeaderProps> = (props) => {
 
             <div className="header-content">
                 <strong>{props.title}</strong>
+                {props.description && <p>{props.description}</p>}
                 {props.children}
             </div>
 
-            
+
 
         </header>
     );
